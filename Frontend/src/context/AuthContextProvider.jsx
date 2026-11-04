@@ -12,6 +12,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     async function hydrate() {
       try {
+        const API_BASE_URL = import.meta.env.VITE_API_URL || "";
         const res = await axios.post(
           `${API_BASE_URL}/api/auth/refresh-token`,
           {},
