@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router";
 import { useApi } from "../../../app/api/useApi";
 import { useContext } from "react";
-import { MyStore } from "../../../context/authContext";
+import { MyStore } from "../../../context/AuthContextProvider";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { updateProductAPI } from "../api/UpdateProductApi";

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { loginUserApi, logoutUserApi, registerUserApi } from "../api/AuthApi";
 import { useContext } from "react";
-import { MyStore } from "../../../context/authContext";
+import { MyStore } from "../../../context/AuthContextProvider";
 import { useApi } from "../../../app/api/useApi";
 
 export const useRegisterUser = () => {

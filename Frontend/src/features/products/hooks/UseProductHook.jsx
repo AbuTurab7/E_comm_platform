@@ -3,7 +3,7 @@ import { deleteProductsAPI, getAllProductsAPI, getSingleProductsAPI } from "../a
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useApi } from "../../../app/api/useApi";
 import { useContext } from "react";
-import { MyStore } from "../../../context/authContext";
+import { MyStore } from "../../../context/AuthContextProvider";
 import {toast} from 'react-toastify'
 
 export const UseGetAllProducts = () => {

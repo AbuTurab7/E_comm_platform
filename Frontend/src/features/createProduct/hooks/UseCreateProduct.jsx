@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 import { CreateProductAPI } from "../api/CreateProductApi";
 import { useApi } from "../../../app/api/useApi";
 import { useContext } from "react";
-import { MyStore } from "../../../context/authContext";
+import { MyStore } from "../../../context/AuthContextProvider";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 

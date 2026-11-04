@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Navigate, Outlet } from "react-router";
-import { MyStore } from "../context/authContext";
+import { MyStore } from "../context/AuthContextProvider";
 
 function AuthProtected() {
   const { user } = useContext(MyStore);

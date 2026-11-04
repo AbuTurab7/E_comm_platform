@@ -3,7 +3,8 @@ import "./index.css";
 import AppRoutes from "./routes/AppRoutes";
 import { ToastContainer } from "react-toastify"
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { AuthContextProvider } from "./context/authContext";
+import { AuthContextProvider } from "./context/AuthContextProvider";
+
 
 const queryClient = new QueryClient()
 
