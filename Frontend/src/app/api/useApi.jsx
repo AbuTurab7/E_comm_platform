@@ -14,7 +14,6 @@ export const useApi = () => {
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
-
     return config;
   });
 
