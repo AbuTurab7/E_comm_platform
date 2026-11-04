@@ -13,7 +13,7 @@ export const AuthContextProvider = ({ children }) => {
     async function hydrate() {
       try {
         const res = await axios.post(
-          "/api/auth/refresh-token",
+          `${API_BASE_URL}/api/auth/refresh-token`,
           {},
           { withCredentials: true },
         );
