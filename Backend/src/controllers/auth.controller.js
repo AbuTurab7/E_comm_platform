@@ -7,12 +7,11 @@ import {
 } from "../utils.js/auth.utils.js";
 import { config } from "../config/config.js";
 
-const isProduction = process.env.NODE_ENV === "production";
-
 const refreshCookieOptions = {
   httpOnly: true,
-  sameSite: isProduction ? "none" : "lax",
-  secure: isProduction,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  path: "/",
   maxAge: 7 * 24 * 60 * 60 * 1000,
 };
 
@@ -176,7 +175,7 @@ export const postRefreshController = async (req, res, next) => {
   }
 };
 
-export const postLogoutController = async (req, res, next) => { 
+export const postLogoutController = async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.user.userId);
     if (!user) {
@@ -189,15 +188,10 @@ export const postLogoutController = async (req, res, next) => {
 
     res.clearCookie("refreshToken", {
       httpOnly: true,
-      sameSite: isProduction ? "none" : "lax",
-      secure: isProduction,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      path: "/",
     });
-
-    // res.clearCookie("refreshToken", {
-    //   httpOnly: true,
-    //   sameSite: "lax",
-    //   secure: process.env.NODE_ENV === "production",
-    // });
 
     return res.status(200).json({
       message: "User logged out successfully.",
